@@ -1,0 +1,61 @@
+
+@mixin flexbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin header_logo {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+@mixin footer_heading {
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+
+
+// @include breakpoint(breakpointname) 
+
+@mixin breakpoint($point) {
+    @if $point==desktop {
+        @media (max-width: 1280px) {
+            @content ;
+        }
+    }
+    @else if $point==laptop {
+        @media (max-width: 1199px) {
+            @content ;
+        }
+    }
+    @else if $point==tablet {
+        @media (max-width: 991px) {
+            @content ;
+        }
+    }
+    @else if $point==custommobile {
+        @media (max-width: 767px) {
+            @content ;
+        }
+    }
+    @else if $point==mobile {
+        @media (max-width: 767px) {
+            @content ;
+        }
+    }
+    @else if $point==mediummobile {
+        @media (max-width: 575px) {
+            @content ;
+        }
+    }
+    @else if $point==smallmobile {
+        @media (max-width: 479px) {
+            @content ;
+        }
+    }
+    @else if $point==xsmobile {
+        @media (max-width: 359px) {
+            @content ;
+        }
+    }
+}
